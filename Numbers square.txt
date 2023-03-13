@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void printSquare(int n, int k);
+
+int main() {
+    
+    printf("Enter value of n and k: ");
+    int n, k;
+    scanf("%d%d", &n, &k);
+        
+    printSquare(n, k);    
+    
+    return 0;
+}
+
+void printSquare(int n, int k) {
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            printf("%d ", k + i + j);
+        }
+        printf("\n");
+    }
+}
+
+
