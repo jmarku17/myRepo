@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    
+    int n;
+    printf("Enter Total Number of Incomes: ");
+    scanf("%d", &n);
+    int incomes[n];
+    int sum = 0;
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &incomes[i]);
+        sum += incomes[i];
+    }
+    
+    int m;
+    printf("Enter Total Number of Expenses: ");
+    scanf("%d", &n);
+    int expenses[n];
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &expenses[i]);
+        sum -= expenses[i];
+    }
+    
+    printf("%d", sum);
+
+    return 0;
+}
