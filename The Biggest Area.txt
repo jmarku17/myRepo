@@ -1,0 +1,77 @@
+#include <stdio.h>
+
+int getShapeType();
+float getArea(int shapeType);
+float ellipseArea();
+float trapezoidArea();
+float hexagonArea();
+
+int main() {
+    
+    printf("Enter number of figures: ");
+    int n;
+    scanf("%d", &n);
+    
+    float area, maxArea = 0, totalArea = 0;
+    int maxShapeType;
+    for(int i = 1; i <= n; i++) {
+        int shapeType = getShapeType();
+        area = getArea(shapeType);
+        totalArea += area;
+        
+        if(area > maxArea) {
+            maxArea = area;
+            maxShapeType = shapeType;
+        }
+    }
+    
+    printf("Total area for %d shapes is: %f \n", n, totalArea);
+        printf("The type of the shape with the biggest area is %d, ", maxShapeType);
+        printf("with an area of %f", maxArea);
+
+    return 0;
+}
+
+int getShapeType() {
+    printf("Enter type of figure: ");
+    int shapeType;
+    scanf("%d", &shapeType);
+    return shapeType;
+}
+
+float getArea(shapeType) {
+    float area;
+    if(shapeType == 1)
+        area = ellipseArea();
+    else if (shapeType == 2)
+        area = trapezoidArea();
+    else 
+        area = hexagonArea();
+    
+    return area;
+}
+
+float ellipseArea() {
+    int a, b;
+    printf("Enter ellipse dimensions a and b: ");
+    scanf("%d%d", &a, &b);
+    float area = 3.14159 * a * b;
+    return area;
+}
+
+float trapezoidArea() {
+    int a, b, h;
+    printf("Enter trapezoid dimensions a, b and h: ");
+    scanf("%d%d", &a, &b);
+    scanf("%d", &h);
+    float area = (a + b) * h / 2;
+    return area;
+}
+
+float hexagonArea() {
+    int a, b, h;
+    printf("Enter hexagon dimension a: ");
+    scanf("%d", &a);
+    float area = (3 * 1.732 * a * a) / 2;
+    return area;
+}
